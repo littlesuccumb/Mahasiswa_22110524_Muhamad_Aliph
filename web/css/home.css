@@ -1,0 +1,622 @@
+/* RESET DAN DASAR */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #e6f7ff;
+  transition: background 0.3s, color 0.3s;
+  
+}
+
+body.dark-mode {
+  background: #0c1a2a;
+  color: #dbefff;
+}
+
+/* SIDEBAR TEMA AIR */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 220px;
+  height: 100%;
+  background: linear-gradient(to bottom right, #00bfff, #1e90ff, #4169e1);
+  color: white;
+  padding-top: 20px;
+  transition: width 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 2px 0 15px rgba(0, 191, 255, 0.3);
+}
+
+.sidebar.active {
+  width: 70px;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  font-size: 20px;
+  color: #fff;
+}
+
+.sidebar-header i {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.sidebar.active .sidebar-header .app-title {
+  opacity: 0;
+  margin-left: -9999px;
+  pointer-events: none;
+}
+
+.sidebar ul,
+.menu-links,
+.logout-link {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar ul li,
+.menu-links li,
+.logout-link li {
+  padding: 10px 0;
+}
+
+.sidebar ul li a,
+.menu-links li a,
+.logout-link li a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.sidebar ul li a:hover,
+.menu-links li a:hover,
+.logout-link li a:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+.sidebar ul li a i,
+.menu-links li a i,
+.logout-link li a i {
+  font-size: 20px;
+  min-width: 30px;
+  text-align: center;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.sidebar ul li a:hover i,
+.menu-links li a:hover i,
+.logout-link li a:hover i {
+  animation: sparkle 0.6s ease-in-out, wave 0.8s ease-in-out;
+  color: #ffffff;
+}
+
+.sidebar.active ul li a,
+.sidebar.active .menu-links li a,
+.sidebar.active .logout-link li a {
+  justify-content: center;
+}
+
+.sidebar.active ul li a span,
+.sidebar.active .menu-links li a span,
+.sidebar.active .logout-link li a span {
+  display: none;
+}
+
+/* LOGOUT LINK BAWAH */
+.logout-link {
+  margin-bottom: 30px;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 0 20px;
+  margin-left: 220px;
+  background: linear-gradient(to bottom right, #00bfff, #1e90ff, #4169e1);
+  color: white;
+  transition: margin-left 0.3s;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 2px 10px rgba(0, 191, 255, 0.2);
+}
+
+.sidebar.active ~ .navbar {
+  margin-left: 70px;
+}
+
+.toggle-btn,
+.dark-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* KONTEN */
+.content {
+  margin-left: 220px;
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+}
+
+.sidebar.active ~ .content {
+  margin-left: 70px;
+}
+
+/* CONTAINER */
+.container {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.1);
+}
+
+body.dark-mode .container {
+  background: #12273e;
+  color: #dbefff;
+}
+
+/* TABEL */
+.table-wrapper {
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 191, 255, 0.1);
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  margin-top: 10px;
+}
+
+thead {
+  background: linear-gradient(to bottom right, #00bfff, #1e90ff, #4169e1);
+  color: white;
+}
+
+thead th {
+  padding: 12px;
+  text-align: center;
+  border: none;
+  font-weight: bold;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+tbody td {
+  padding: 14px;
+  background-color: white;
+  border: none;
+  text-align: center;
+  border-radius: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 191, 255, 0.1);
+}
+
+tbody tr:hover td {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 191, 255, 0.2);
+  background-color: #e6f7ff;
+}
+
+body.dark-mode tbody td {
+  background-color: #0c1a2a;
+  color: #dbefff;
+}
+
+body.dark-mode tbody tr:hover td {
+  background-color: #1c3b5d;
+}
+
+
+/* TOMBOL */
+.btn {
+  border: none;
+  padding: 6px 12px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  text-decoration: none;
+}
+/* Tombol Edit */
+.btn.edit {
+  background: linear-gradient(to right, #28a745, #3bd671);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.btn.edit:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(40, 167, 69, 0.4);
+}
+
+/* Tombol Hapus */
+.btn.delete {
+  background: linear-gradient(to right, #e74c3c, #ff6b6b);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.btn.delete:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(231, 76, 60, 0.4);
+}
+
+
+.search-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-box input {
+  width: 250px;
+  padding: 8px 35px;
+  border: 1px solid #00bfff;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.search-box i {
+  position: absolute;
+  left: 10px;
+  font-size: 18px;
+  color: #00bfff;
+}
+
+body.dark-mode .search-box input {
+  background: #1e1e1e;
+  color: #dbefff;
+  border-color: #0078d7;
+}
+
+/* FORM */
+.form-wrapper {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 600px;
+  margin: 30px auto;
+  box-shadow: 0 8px 20px rgba(0, 191, 255, 0.15);
+  animation: fadeIn 0.5s ease;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+body.dark-mode .form-wrapper {
+  background: #12273e;
+  color: #dbefff;
+  box-shadow: 0 8px 20px rgba(0, 120, 215, 0.2);
+}
+
+/* Judul form */
+.form-wrapper h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #007acc;
+}
+body.dark-mode .form-wrapper h2 {
+  color: #63c7ff;
+}
+
+/* Setiap baris input */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Label */
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #1e90ff;
+}
+body.dark-mode .form-group label {
+  color: #8fd4ff;
+}
+
+/* Input */
+.form-group input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 14px;
+  border: 1px solid #00bfff;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+.form-group input:focus {
+  border-color: #007acc;
+}
+body.dark-mode .form-group input {
+  background: #1c2e4a;
+  color: #dbefff;
+  border-color: #0078d7;
+}
+
+/* Tombol simpan/batal */
+.form-button-group {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-start;
+  margin-top: 20px;
+}
+
+/* Animasi masuk */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ANIMASI */
+@keyframes sparkle {
+  0%   { transform: scale(1); opacity: 1; }
+  50%  { transform: scale(1.3); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes wave {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-3px); }
+  100% { transform: translateY(0); }
+}
+
+/* REALTIME CLOCK */
+.realtime-clock {
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+}
+
+body.dark-mode .realtime-clock {
+  color: #dbefff;
+}
+.btn i:hover {
+    animation: sparkle 0.4s ease-in-out, wave 0.8s ease-in-out;
+}
+/* Tambah Data Button - dengan animasi gelombang */
+.btn.tambah {
+  background: linear-gradient(to right, #00bfff, #1e90ff);
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn.tambah::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 150%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: skewX(-25deg);
+  animation: waveSlide 2.5s infinite linear;
+}
+
+@keyframes waveSlide {
+  0% { left: -75%; }
+  100% { left: 100%; }
+}
+
+.btn.tambah i {
+  font-size: 18px;
+}
+
+.btn.tambah:hover {
+  background: linear-gradient(to right, #009acd, #187bcd);
+  transform: scale(1.05);
+}
+
+/* Dark mode versi */
+body.dark-mode .btn.tambah {
+  background: linear-gradient(to right, #005a9e, #0078d7);
+}
+
+body.dark-mode .btn.tambah:hover {
+  background: linear-gradient(to right, #004d80, #0066b2);
+}
+
+
+/* Tombol Batal */
+.btn.batal {
+    background: linear-gradient(to right, #87cefa, #4682b4); /* Biru langit ke biru baja */
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn.batal:hover {
+    background: linear-gradient(to right, #6495ed, #4169e1); /* Biru laut ke biru royal */
+    transform: scale(1.05);
+}
+body.dark-mode .btn.batal {
+    background: linear-gradient(to right, #005a9e, #0078d7);
+    color: white;
+}
+
+body.dark-mode .btn.batal:hover {
+    background: linear-gradient(to right, #004080, #0066b2);
+}
+
+/* Tombol Simpan */
+.btn.simpan {
+    background: linear-gradient(to right, #00bfff, #1e90ff); /* Biru cerah ke biru laut */
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn.simpan:hover {
+    background: linear-gradient(to right, #1e90ff, #007acc); /* Biru laut ke biru tua */
+    transform: scale(1.05);
+}
+body.dark-mode .btn.simpan {
+    background: linear-gradient(to right, #0078d7, #005a9e);
+    color: white;
+}
+
+body.dark-mode .btn.simpan:hover {
+    background: linear-gradient(to right, #006bb3, #004080);
+}
+/* Animasi ikon sidebar & dark mode */
+.navbar .toggle-btn i,
+.navbar .dark-btn i {
+  transition: transform 0.4s ease, color 0.4s ease;
+}
+
+/* Saat hover: kombinasi gelombang dan percikan */
+.navbar .toggle-btn:hover i,
+.navbar .dark-btn:hover i {
+  animation: waveBounce 0.8s ease-in-out, sparkle 0.6s ease-in-out;
+  color: #fefefe;
+}
+
+/* Versi dark mode */
+body.dark-mode .navbar .toggle-btn:hover i,
+body.dark-mode .navbar .dark-btn:hover i {
+  color: #00e6e6;
+}
+
+/* Sparkle: kilau */
+@keyframes sparkle {
+  0%   { transform: scale(1); opacity: 1; }
+  50%  { transform: scale(1.2) rotate(10deg); opacity: 0.85; }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+/* Wave Bounce: seolah terkena gelombang */
+@keyframes waveBounce {
+  0%   { transform: translateY(0); }
+  25%  { transform: translateY(-3px) rotate(-3deg); }
+  50%  { transform: translateY(2px) rotate(3deg); }
+  75%  { transform: translateY(-1px) rotate(-2deg); }
+  100% { transform: translateY(0); }
+}
+.notif {
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  animation: slideDown 0.4s ease;
+  box-shadow: 0 4px 10px rgba(0, 191, 255, 0.1);
+}
+
+/* Notifikasi Sukses */
+.notif.success {
+  background: #d0f0ff;
+  color: #0077cc;
+  border-left: 6px solid #00bfff;
+}
+
+body.dark-mode .notif.success {
+  background: #0e3a5e;
+  color: #a2dfff;
+  border-left: 6px solid #00bfff;
+}
+
+/* Notifikasi Error */
+.notif.error {
+  background: #ffe5e5;
+  color: #cc0000;
+  border-left: 6px solid #ff4d4d;
+}
+
+body.dark-mode .notif.error {
+  background: #3a1e1e;
+  color: #ff9999;
+  border-left: 6px solid #ff4d4d;
+}
+
+/* Ikon dalam notif */
+.notif i {
+  font-size: 18px;
+}
+
+/* Animasi slide masuk */
+@keyframes slideDown {
+  0% {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
