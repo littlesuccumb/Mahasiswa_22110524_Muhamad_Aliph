@@ -15,23 +15,23 @@ Ini adalah aplikasi web berbasis **Java JSP dan Servlet** yang mensimulasikan pr
 
 ## 🚀 Fitur Aplikasi
 
-- 🔐 Login & Logout
-- 📝 Registrasi pengguna
-- 🏠 Halaman Home setelah login
-- ➕ Tambah, Edit, Hapus data mahasiswa
-- ❌ Penanganan error melalui `error.jsp`
-- 🎨 Styling dengan CSS
-- 💡 Interaktif dengan JavaScript
+- 🔐 Login & Logout  
+- 📝 Registrasi pengguna  
+- 🏠 Halaman Home setelah login  
+- ➕ Tambah, Edit, Hapus data mahasiswa  
+- ❌ Penanganan error melalui `error.jsp`  
+- 🎨 Styling dengan CSS  
+- 💡 Interaktif dengan JavaScript  
 
 ---
 
 ## 🛠 Teknologi yang Digunakan
 
-- Java Server Pages (JSP)
-- Jakarta Servlet
-- HTML, CSS, JavaScript
-- NetBeans (Ant Project)
-- MVC Pattern (Model - View - Controller)
+- Java Server Pages (JSP)  
+- Jakarta Servlet  
+- HTML, CSS, JavaScript  
+- NetBeans (Ant Project)  
+- MVC Pattern (Model - View - Controller)  
 
 ---
 
@@ -67,8 +67,8 @@ Mahasiswa_22110524_Muhamad_Aliph_Fauzansyah/
 
 ## ⚙️ Cara Menjalankan
 
-1. Buka project di **NetBeans**
-2. Jalankan server seperti **Tomcat** atau **GlassFish**
+1. Buka project di **NetBeans**  
+2. Jalankan server seperti **Tomcat** atau **GlassFish**  
 3. Akses melalui browser:
 ```
 http://localhost:8080/Mahasiswa_22110524_Muhamad_Aliph_Fauzansyah/
@@ -76,10 +76,33 @@ http://localhost:8080/Mahasiswa_22110524_Muhamad_Aliph_Fauzansyah/
 
 ---
 
+## 💾 Instalasi & Penggunaan Database
+
+1. Buka **phpMyAdmin** atau MySQL Workbench  
+2. Buat database baru dengan nama:
+   ```
+   kampus
+   ```
+3. Import file `kampus.sql` yang ada di folder project:
+   - **Via phpMyAdmin**: klik database `kampus` → pilih tab **Import** → unggah file `kampus.sql`
+   - **Via terminal / command prompt**:
+     ```bash
+     mysql -u [username] -p kampus < path/to/kampus.sql
+     ```
+4. Sesuaikan konfigurasi koneksi database di file `MahasiswaDAO.java` atau class koneksi Anda:
+   ```java
+   String url = "jdbc:mysql://localhost:3306/kampus";
+   String username = "root";
+   String password = ""; // Sesuaikan dengan password database lokal Anda
+   ```
+
+---
+
 ## 📌 Catatan
 
-- Semua proses seperti login, registrasi, dan CRUD disimulasikan secara langsung dalam aplikasi.
-- Cocok untuk latihan dasar pemrograman Java Web.
+- Semua proses seperti login, registrasi, dan CRUD disimulasikan secara langsung dalam aplikasi  
+- Database `kampus` digunakan untuk menyimpan data mahasiswa  
+- Cocok untuk latihan dasar pemrograman Java Web  
 
 ---
 
