@@ -1,4 +1,4 @@
-<%@ page import="javax.servlet.http.*, javax.servlet.*" %>
+<%@page import="java.sql.*"%>
 <%
     session.invalidate();
     response.sendRedirect("index.jsp?logout=success");
