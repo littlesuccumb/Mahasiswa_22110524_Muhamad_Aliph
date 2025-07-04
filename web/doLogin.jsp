@@ -1,4 +1,4 @@
-<%@ page import="java.sql.*, javax.servlet.http.*, javax.servlet.*" %>
+<%@page import="java.sql.*"%>
 <%
     String user = request.getParameter("username");
     String pass = request.getParameter("password");
